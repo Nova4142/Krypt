@@ -11,7 +11,7 @@ contract LAPNFT is ERC721Enumerable, ERC2981, Ownable {
     using Strings for uint256;
 
     address private _treasuryAddress;
-    address private _burnAddress = 0x000000000000000000000000000000000000dEaD;
+    address private _burnAddress = address(0);
     address private _devWallet = 0xb9b1cEB028Fa12514952FF1800feFADc6ce0DD0f;
     uint256 public mintPrice = 0.01 ether;
     uint256 private _maxSupply = 10000;
