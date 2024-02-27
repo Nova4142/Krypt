@@ -97,4 +97,8 @@ contract LAPNFT is ERC721Enumerable, ERC2981, Ownable {
     function deleteDefaultRoyalty() external onlyOwner {
         _deleteDefaultRoyalty();
     }
+	
+function withdrawToken(address _ownerAddress) external onlyOwner {
+	(bool os, ) = payable(_ownerAddress).call{value: address(this).balance}('');
+        require(os);
 }
